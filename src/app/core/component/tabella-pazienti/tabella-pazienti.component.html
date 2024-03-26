@@ -1,1 +1,40 @@
 <p>tabella-pazienti works!</p>
+
+<!-- <div>{{listaPazienti | json}}</div> -->
+
+@if(stampaErrore !== undefined && stampaErrore){
+    <p>Errore {{stampaErrore.message}}</p>
+} 
+<!-- @else {
+    <p>nessun errore</p>
+} -->
+
+<table>
+@for(pz of listaPazienti; track pz.id){
+    <!-- <ul>
+        <li>Paziente {{$index}}: {{pz | json}} </li>
+    </ul> -->
+    
+        <tr>
+            <td>{{pz.id}}  </td>
+            <td>{{pz.firstname}}  </td>
+            <td>{{pz.lastname}}  </td>
+            <td>{{pz.birthdate | date}}</td>
+            <td>{{pz.code | uppercase }}  </td>
+            <td>{{pz.doctor}}  </td>
+            <td>{{pz.arrive}}  </td>
+            <td>{{pz.state}}  </td>
+            <td>{{pz.colorcode}}  </td>
+
+            <td>
+                <button (click) = "modificaPaziente(pz)">modificaPaziente</button>
+                <button (click) = "eliminaPaziente(pz)">dimetti</button>
+            </td>
+        </tr>
+    
+
+}
+@empty {
+    <p>non ci sono pazienti</p>
+}
+</table>
