@@ -10,6 +10,7 @@ export class CoreHttpService {
 
   private readonly BaseUrl = 'https://kgfek5e9a0.execute-api.us-east-1.amazonaws.com'
 
+
   constructor(private http: HttpClient) { }
 
   public get(url: string): Observable<IPaziente[]>{

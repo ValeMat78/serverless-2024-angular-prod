@@ -1,6 +1,6 @@
 export interface IPaziente{
     id: number;
-    code: TCodicePazinete;
+    code: TCodicePaziente;
     firstname: string;
     lastname: string;
     birthdate: Date;
@@ -10,9 +10,7 @@ export interface IPaziente{
     state: Tstato;
 }
 
-type TCodicePazinete = string;
+type TCodicePaziente = string;
 type TCodiceColore = "ROSSO" | "GIALLO" | "VERDE" | "AZZURRO" | "BIANCO";
 type Tstato ="IN ATTESA" | "IN CURA" | "DIMISSIONE" | "DECEDUTO";
 type TModalitaArrivo ="AMBULANZA" | "PRIVATO" | "ALTRO";
-
-
